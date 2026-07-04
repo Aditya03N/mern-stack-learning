@@ -1,16 +1,55 @@
-# React + Vite
+# React Learning Log
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Today I learned about the `useEffect` hook in React.
 
-## React Compiler
+### What is useEffect?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+`useEffect` is a React Hook that allows us to perform side effects in functional components. It runs after the component renders.
 
-## Expanding the ESLint configuration
+### Common Uses
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Fetching data from an API
+* Updating the document title
+* Setting up timers
+* Handling subscriptions and event listeners
+
+### Basic Syntax
+
+```jsx
+useEffect(() => {
+  // Side effect code here
+}, []);
+```
+
+### What I Learned
+
+* `useEffect` runs after rendering.
+* The dependency array controls when the effect runs.
+* An empty dependency array (`[]`) makes the effect run only once after the initial render.
+* Dependencies inside the array cause the effect to run whenever those values change.
+
+### Example
+
+```jsx
+import { useEffect } from "react";
+
+function App() {
+  useEffect(() => {
+    console.log("Component mounted");
+  }, []);
+
+  return <h1>Hello React</h1>;
+}
+```
+
+### Today's Progress
+
+✅ Learned the basics of `useEffect`
+✅ Understood dependency arrays
+✅ Created a simple example using `useEffect`
+
+---
+
+Learning React one step at a time 🚀
